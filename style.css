@@ -1,0 +1,322 @@
+/* ======== ESTILOS GENERALES Y VARIABLES CSS ======== */
+:root {
+    /* Variables para el modo oscuro (predeterminado por HTML y estas variables) */
+    --bg-color: #121212;
+    --text-color: #ffffff; /* Texto blanco para modo oscuro */
+    --primary-accent-color: #ff0000; /* Rojo para bordes y detalles */
+    --card-bg-color: #1e1e1e;
+    --navbar-bg-color: rgba(18, 18, 18, 0.85);
+    --border-luminous: 0 0 8px var(--primary-accent-color), 0 0 12px var(--primary-accent-color), 0 0 16px var(--primary-accent-color);
+    --border-luminous-light: 0 0 5px var(--primary-accent-color), 0 0 8px var(--primary-accent-color);
+    --input-bg-color: #2a2a2a;
+    --input-border-color: #444;
+    --input-text-color: #ffffff; /* Color de texto para inputs en modo oscuro */
+    --btn-primary-bg: var(--primary-accent-color);
+    --btn-primary-border: var(--primary-accent-color);
+    --btn-primary-text: #ffffff; /* Texto del botón primario */
+    --btn-primary-hover-bg: #cc0000;
+    --btn-primary-hover-border: #cc0000;
+    --link-color: #f0f0f0; /* Color de enlace para modo oscuro */
+    --link-hover-color: var(--primary-accent-color);
+    --section-title-color: var(--text-color); /* Títulos de sección usan el color de texto general */
+    --toggler-icon-color: var(--text-color); /* Color para el navbar-toggler */
+}
+
+/* Variables para el modo claro */
+.light-mode {
+    --bg-color: #f9f9f9;
+    --text-color: #212529; /* Texto oscuro (casi negro) para modo claro - CORRECCIÓN CLAVE */
+    /* --primary-accent-color: #ff0000; se hereda de :root si no se redefine, lo cual está bien */
+    --card-bg-color: #ffffff;
+    --navbar-bg-color: rgba(249, 249, 249, 0.9);
+    --border-luminous: 0 0 4px rgba(255, 0, 0, 0.4); /* Menos intenso para modo claro */
+    --border-luminous-light: 0 0 3px rgba(255, 0, 0, 0.3);
+    --input-bg-color: #ffffff;
+    --input-border-color: #ced4da;
+    --input-text-color: #212529; /* Color de texto para inputs en modo claro */
+    /* --btn-primary-bg, --btn-primary-border, --btn-primary-text no cambian, el rojo destaca bien en ambos modos */
+    --link-color: #0d6efd; /* Color de enlace azul estándar de Bootstrap para modo claro */
+    --link-hover-color: #0a58ca; /* Hover de enlace más oscuro */
+    --section-title-color: var(--text-color); /* Títulos de sección usan el color de texto general (oscuro en este modo) */
+    --toggler-icon-color: var(--text-color); /* Color para el navbar-toggler */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color); /* ESTE ES EL CAMBIO GLOBAL */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-top: 70px;
+}
+
+/* ======== 1. Menú Fijo (Navbar) ======== */
+.navbar {
+    background-color: var(--navbar-bg-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--primary-accent-color);
+    box-shadow: var(--border-luminous-light);
+    transition: background-color 0.3s ease;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: var(--link-color); /* Usa la variable de color de enlace definida para cada modo */
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-brand:hover,
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--link-hover-color); /* Usa la variable de hover de enlace */
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 0, 0, 0.5);
+}
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+    background-color: var(--toggler-icon-color); /* Usa la variable para el color del icono del toggler */
+}
+
+
+/* Estilo del botón de cambio de tema */
+.theme-toggle-btn {
+    background-color: transparent;
+    border: 1px solid var(--primary-accent-color);
+    color: var(--primary-accent-color); /* El icono dentro del botón siempre será rojo */
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+}
+.theme-toggle-btn:hover {
+    background-color: var(--primary-accent-color);
+    /* El color del icono (rojo) no necesita cambiar, pero el fondo del botón sí */
+    /* Para mejor contraste del icono rojo sobre fondo rojo en hover, podríamos hacerlo blanco */
+    color: var(--bg-color); /* Cambia el color del icono al color de fondo actual para invertirlo */
+}
+.theme-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* ======== ESTILOS DE SECCIÓN ======== */
+.section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-title {
+    color: var(--section-title-color); /* Aplicará el color de texto del tema actual */
+    margin-bottom: 2rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-accent-color);
+    margin: 10px auto 0;
+}
+.text-start .section-title::after,
+.text-md-start .section-title::after {
+    margin-left: 0;
+}
+
+/* ======== 2. Sección: Perfil ======== */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-accent-color);
+    box-shadow: var(--border-luminous);
+    object-fit: cover;
+    animation: heartbeat 1.5s infinite ease-in-out, profileShine 3s infinite alternate;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes profileShine {
+    0% { box-shadow: var(--border-luminous); }
+    100% { box-shadow: 0 0 12px var(--primary-accent-color), 0 0 18px var(--primary-accent-color), 0 0 24px var(--primary-accent-color); }
+}
+
+.bio {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 1rem auto 0;
+    line-height: 1.8;
+    color: var(--text-color); /* Asegura que la bio use el color de texto del tema */
+}
+
+/* ======== 3, 5, 6. Estilos de Cards (Experiencia, Proyectos, Videos) ======== */
+.card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--primary-accent-color);
+    box-shadow: var(--border-luminous-light);
+    color: var(--text-color); /* El texto dentro de la card usa el color del tema */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--border-luminous);
+}
+
+.card .card-title {
+    color: var(--primary-accent-color); /* Títulos de card siempre en rojo */
+    font-weight: bold;
+}
+
+.card .text-muted {
+    /* En modo oscuro, queremos que sea un gris claro. En modo claro, un gris oscuro. */
+    /* Podríamos definir una variable específica o ajustar la opacidad. */
+    color: var(--text-color) !important;
+    opacity: 0.7; /* Esto hará que el blanco sea gris claro, y el negro sea gris oscuro */
+}
+
+.project-card .card-img-top {
+    border-bottom: 1px solid var(--primary-accent-color);
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+}
+.project-card:hover .card-img-top {
+    opacity: 0.9;
+}
+
+.ratio iframe {
+    border-radius: 0.25rem;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    border-color: var(--btn-primary-border);
+    color: var(--btn-primary-text); /* Texto del botón siempre blanco para contraste con rojo */
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover-bg);
+    border-color: var(--btn-primary-hover-border);
+    transform: scale(1.05);
+}
+
+.animated-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.animated-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======== 4. Sección: Tecnologías ======== */
+.tech-icon-card {
+    padding: 1.5rem;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--primary-accent-color);
+    box-shadow: var(--border-luminous-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-icon-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: var(--border-luminous);
+}
+
+.tech-icon-card i {
+    margin-bottom: 0.5rem;
+}
+.tech-icon-card p {
+    margin-bottom: 0;
+    font-weight: bold;
+    color: var(--text-color); /* Texto del ícono tecnológico usa el color del tema */
+}
+
+/* ======== 7. Sección: Contacto ======== */
+.form-control {
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color); /* Color de texto específico para inputs */
+    border: 1px solid var(--input-border-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-control::placeholder { /* Estilo para el placeholder */
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+.form-control:focus {
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+    border-color: var(--primary-accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25);
+}
+
+.form-label {
+    color: var(--text-color); /* Label del formulario usa el color del tema */
+}
+
+/* ======== 8. Footer ======== */
+footer {
+    background-color: var(--navbar-bg-color);
+    border-top: 1px solid var(--primary-accent-color);
+    box-shadow: 0 -2px 5px rgba(255, 0, 0, 0.1);
+    color: var(--text-color); /* Texto del footer usa el color del tema */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon {
+    color: var(--text-color); /* Iconos sociales usan el color del tema */
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-accent-color); /* Al pasar el mouse, siempre rojo */
+    transform: scale(1.2);
+}
+
+/* ======== RESPONSIVIDAD Y AJUSTES FINALES ======== */
+@media (max-width: 767.98px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    .bio {
+        font-size: 1rem;
+    }
+    .col-md-4 {
+        margin-bottom: 1.5rem;
+    }
+    .tech-icon-card {
+        padding: 1rem;
+    }
+}
+
+html {
+    scroll-padding-top: 70px;
+    scroll-behavior: smooth;
+}

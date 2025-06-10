@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juancito Peña - Desarrollador Web UI/UX</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (para iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ======== 1. Menú Fijo (Navbar) ======== -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">👨‍💻 Juancito Peña</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#perfil">🔥 Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experiencia">🎓 Experiencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tecnologias">🛠 Tecnologías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">🚀 Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">🎬 Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">📩 Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-sm ms-2 theme-toggle-btn">
+                            <i class="fas fa-sun"></i> <!-- Icono inicial, se cambiará con JS -->
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======== 2. Sección: Perfil ======== -->
+    <section id="perfil" class="py-5 text-center section-padding">
+        <div class="container">
+            <h2 class="section-title">Desarrollador Frontend (UI/UX)</h2>
+            <br>
+            <img src="https://avatars.githubusercontent.com/u/38921558?v=4" alt="Juancito Peña" class="profile-img my-4">
+            <h3>Juancito Peña</h3>
+            <p class="bio">
+                👨‍💻 Ingeniero en Sistemas y Computación | 💾 Programación | <br class="d-md-none">
+                🌐 Frontend y Backend | 📊 Análisis de Datos
+            </p>
+        </div>
+    </section>
+
+    <!-- ======== 3. Sección: Experiencia ======== -->
+    <section id="experiencia" class="py-5 section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Experiencia Profesional 🏆</h2>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card animated-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tech Solutions Inc.</h5>
+                            <p class="card-text"><strong>Tecnologías:</strong> React, Node.js, MongoDB</p>
+                            <p class="card-text"><small class="text-muted">Periodo: 2023 - 2025</small></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card animated-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Innovatech Corp.</h5>
+                            <p class="card-text"><strong>Tecnologías:</strong> Angular, Firebase, Data Studio</p>
+                            <p class="card-text"><small class="text-muted">Periodo: 2021 - 2023</small></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card animated-card">
+                        <div class="card-body">
+                            <h5 class="card-title">WebDev Agency</h5>
+                            <p class="card-text"><strong>Tecnologías:</strong> Vue.js, Python (Django), AWS</p>
+                            <p class="card-text"><small class="text-muted">Periodo: 2020 - 2021</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== 4. Sección: Tecnologías ======== -->
+    <section id="tecnologias" class="py-5 section-padding">
+        <div class="container text-center">
+            <h2 class="section-title mb-5">Stack Tecnológico 💻</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="tech-icon-card">
+                        <i class="fab fa-html5 fa-3x" style="color: #E34F26;"></i>
+                        <p>HTML5</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-icon-card">
+                        <i class="fab fa-css3-alt fa-3x" style="color: #1572B6;"></i>
+                        <p>CSS3</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-icon-card">
+                        <i class="fab fa-js-square fa-3x" style="color: #F7DF1E;"></i>
+                        <p>JavaScript</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-icon-card">
+                        <i class="fab fa-bootstrap fa-3x" style="color: #7952B3;"></i>
+                        <p>Bootstrap</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== 5. Sección: Proyectos ======== -->
+    <section id="proyectos" class="py-5 section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Proyectos 🛠</h2>
+            <div class="row g-4">
+                <!-- Proyecto 1 -->
+                <div class="col-md-4">
+                    <div class="card animated-card project-card">
+                        <img src="Screenshot_505.png" class="card-img-top" alt="Proyecto 1">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dashboard Analítico</h5>
+                            <p class="card-text">Plataforma interactiva para visualización de datos empresariales.</p>
+                            <a href="https://dashboard-flujo-de-caja.vercel.app/" target="_blank" class="btn btn-primary">Ver 🔍</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto 2 -->
+                <div class="col-md-4">
+                    <div class="card animated-card project-card">
+                        <img src="https://dummyimage.com/600x400/cc0000/fff.png&text=Proyecto+2" class="card-img-top" alt="Proyecto 2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">E-commerce de Moda</h5>
+                            <p class="card-text">Tienda online responsive con pasarela de pagos integrada.</p>
+                            <a href="#" class="btn btn-primary">Ver 🔍</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto 3 -->
+                <div class="col-md-4">
+                    <div class="card animated-card project-card">
+                        <img src="https://dummyimage.com/600x400/cc0000/fff.png&text=Proyecto+3" class="card-img-top" alt="Proyecto 3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">App de Gestión de Tareas</h5>
+                            <p class="card-text">Aplicación colaborativa para organizar proyectos y tareas.</p>
+                            <a href="#" class="btn btn-primary">Ver 🔍</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== 6. Sección: Videos ======== -->
+    <section id="videos" class="py-5 section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Videos 🎬</h2>
+            <div class="row g-4">
+                <!-- Video 1 -->
+                <div class="col-md-4">
+                    <div class="card animated-card">
+                        <div class="card-body">
+                            <h5 class="card-title">📌 Tutorial UI/UX</h5>
+                            <div class="ratio ratio-16x9 mb-3">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="card-text">📝 Breve descripción del video sobre principios de UI/UX.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="col-md-4">
+                    <div class="card animated-card">
+                        <div class="card-body">
+                            <h5 class="card-title">📌 Charla sobre Web Dev</h5>
+                            <div class="ratio ratio-16x9 mb-3">
+                                <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="card-text">📝 Resumen de una charla inspiradora sobre desarrollo web.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video 3 -->
+                <div class="col-md-4">
+                    <div class="card animated-card">
+                        <div class="card-body">
+                            <h5 class="card-title">📌 Mi Proceso Creativo</h5>
+                            <div class="ratio ratio-16x9 mb-3">
+                                <iframe src="https://www.youtube.com/embed/HPJKxAhLBEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="card-text">📝 Un vistazo a cómo abordo los proyectos de diseño y desarrollo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== 7. Sección: Contacto ======== -->
+    <section id="contacto" class="py-5 section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contacto 📩</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== 8. Footer ======== -->
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p class="mb-2">© 2024 Juancito Peña. Todos los derechos reservados.</p>
+            <div>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (Popper.js incluido) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
